@@ -9,7 +9,8 @@ namespace AutofixtureSamples.Test.Customizations
         public void Customize(IFixture fixture)
         {
             fixture.Customize(new SpanishUserCustomization());
-            fixture.Customize<User>(comp => comp.With(p => p.BornDate, new DateTime(1989, 1, 1)));
+            fixture.Customize<User>(comp => comp.With(p => p.BornDate, 
+                                    DateTime.Now.AddYears(-25)));
         }
     }
 }
