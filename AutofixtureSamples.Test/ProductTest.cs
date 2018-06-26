@@ -33,7 +33,7 @@ namespace AutofixtureSamples.Test
         }
 
         [Fact]
-        public void AllProducts_Are_Not_DummyProductAndExpensive_With_CompositeCustomization_Test()
+        public void AllProducts_Are_DummyProductAndExpensive_Test()
         {
             IFixture fixture = new Fixture().Customize(new ExpensiveDummyProductCustomization());
 
