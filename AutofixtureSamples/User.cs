@@ -25,11 +25,9 @@ namespace AutofixtureSamples
             this.Email = email;
         }
 
-        public bool? IsAdult()
+        public bool IsAdult()
         {
-            if (this.Country?.Name == "ES" && DateTime.Today.Year - this.BornDate.Year >= 18)
-                return true;
-            return false;
+            return this.Country?.Name == "ES" && DateTime.Today.Year - this.BornDate.Year >= 18;
         }
     }
 }
