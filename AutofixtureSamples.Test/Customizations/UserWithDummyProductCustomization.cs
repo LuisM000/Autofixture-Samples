@@ -9,6 +9,5 @@ namespace AutofixtureSamples.Test.Customizations
         {
 
         }
-
     }
 }

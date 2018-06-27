@@ -5,7 +5,6 @@ namespace AutofixtureSamples.Test.Customizations
 {
     public class AdultUserCustomization : ICustomization
     {
-       
         public void Customize(IFixture fixture)
         {
             fixture.Customize(new SpanishUserCustomization());

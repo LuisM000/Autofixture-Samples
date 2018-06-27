@@ -1,7 +1,9 @@
-﻿using AutofixtureSamples.Test.AutoDataAttributes;
+﻿using System;
+using AutofixtureSamples.Test.AutoDataAttributes;
 using AutoFixture;
 using AutofixtureSamples.Test.Builders;
 using AutofixtureSamples.Test.Customizations;
+using AutoFixture.Xunit2;
 using Xunit;
 
 
@@ -9,6 +11,7 @@ namespace AutofixtureSamples.Test
 {
     public class UserTest
     {
+
         [Fact]
         public void UserIsCreated_With_UserSpecimenBuilder_Test()
         {
@@ -49,7 +52,7 @@ namespace AutofixtureSamples.Test
             Assert.NotNull(user); 
         }
 
-
+     
         [Fact]
         public void CreateSpanishUser_Test()
         {
@@ -62,13 +65,14 @@ namespace AutofixtureSamples.Test
 
 
         [Fact]
-        public void CreateAdultUser_Test()
+        public void CreateSpanishAdultUser_Test()
         {
             IFixture fixture = new Fixture().Customize(new AdultUserCustomization());
 
             User user = fixture.Create<User>();
 
             Assert.True(user.IsAdult());
+            Assert.Equal("ES", user.Country.Name);
         }
 
         [Fact]
@@ -80,6 +84,10 @@ namespace AutofixtureSamples.Test
 
             Assert.Equal("Dummy Product", user.Product.Name);
         }
+
+
+
+
 
     }
  
